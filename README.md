@@ -1,4 +1,4 @@
-# Foobar
+# VIDEO-STREAMING
 
 Projeto para demostrar o live streaming de video, desenvolvido em nodejs
 
