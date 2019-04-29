@@ -49,7 +49,6 @@
                             </div>
                         </div>
                         <br>
-                        <a id="alterar-conf-som" class="btn btn-secondary btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Desativar Audio</a>
 
                     </div>
                 </div>
@@ -140,21 +139,7 @@
             context.drawImage(video, 0, 0, context.width, context.height);
             socket.emit('stream', canvas.toDataURL('image/webp'));
         }
-        $('#alterar-conf-som').click(function () {
-            if(transmitirAudio){
-                transmitirAudio = false;
-                $(this).text("Ativar Audio");
 
-            }else{
-                transmitirAudio = true;
-                $(this).text("Desativar Audio");
-            }
-            navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
-
-            if (navigator.getUserMedia) {
-                navigator.getUserMedia({ video: transmitirVideo, audio: transmitirAudio }, loadCamera, loadFail);
-            } 
-        })
         $(function () {
             navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
 
